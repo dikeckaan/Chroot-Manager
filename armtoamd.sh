@@ -13,7 +13,7 @@ echo "Target OSNAME is $OSNAME"
 rm -rf "/srv/chroot/ubuntu-x64"
 apt update
 apt install -y qemu-user-static schroot debootstrap
-cp /usr/bin/qemu-x86_64-static /srv/chroot/$OSNAME/usr/bin
+cp /usr/bin/qemu-x86_64-static /srv/chroot/ubuntu-x64/usr/bin
 debootstrap --arch amd64 --foreign focal /srv/chroot/ubuntu-x64
 chroot "/srv/chroot/ubuntu-x64/" /debootstrap/debootstrap --second-stage
 
